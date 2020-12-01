@@ -1,12 +1,10 @@
-﻿<div class="container body-content">
-    <h2>View jobs by:</h2>
-    <ul>
-        @foreach (var action in ViewBag.actions)
-        {
-            <li>
-                <a href="/@action.Key">@action.Value</a>
-            </li>
-
-        }
-    </ul>
-</div>
+﻿@{ 
+    ViewBag.Title = "Home";
+}
+<p>View jobs by:</p>
+<ul>
+    @foreach (KeyValuePair<string, string> action in ViewBag.actions)
+    {
+        <li><a class="text-info" href="/@action.Key">@action.Value</a></li>
+    }
+</ul>

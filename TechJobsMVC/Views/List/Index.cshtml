@@ -1,33 +1,10 @@
-﻿<div class="container body-content">
-    <h1>@ViewBag.title</h1>
-    <h2 class="centered">View Jobs By Category</h2>
-</div>
-
-<table class="centeredTable">
-    <tr>
-        @foreach(var column in ViewBag.columns)
-        {
-            <th>@column.Value</th>
-        }
-    </tr>
-    <tr>
-        @{
-            //TODO #2: Complete the View Jobs By Category Table
-        }
-
-        <td></td> @* Feel free to remove or modify this element if necessary. *@
-        @foreach (var category in ViewBag.tableChoices)
-        {
-            <td>
-                <ul>
-                    @foreach (var item in category.Value)
-                    {
-                        <li>
-                            <a asp-controller="List" asp-action="Jobs" asp-route-column="@category.Key" asp-route-value="@item">@item</a>
-                        </li>
-                    }
-                </ul>
-            </td>
-        }
-    </tr>
-        </table>
+﻿<h1>@ViewBag.Title</h1>
+<h2>View All</h2>
+<ul>
+    @foreach (KeyValuePair<string, string> column in ViewBag.columns)
+    {
+        <li>
+            <a class="text-info" asp-controller="List" asp-action="Values" asp-route-column="@column.Key">@column.Value</a>
+        </li>
+    }
+</ul>

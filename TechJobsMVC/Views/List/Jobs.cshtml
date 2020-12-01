@@ -1,10 +1,9 @@
-﻿<div class="container body-content">
+﻿<h1>@ViewBag.title</h1>
 
-    <h1>@ViewBag.title</h1>
+<h3>@ViewBag.jobs.Count Result(s)</h3>
 
-    @{
-        //TODO #1: Use a loop to display job results in a table.
-    }
+@{
+    //TODO #1: Use a loop to display job results in a table.
+}
 
-
-</div>
+@await Html.PartialAsync("_ListPartial")

@@ -1,0 +1,27 @@
+﻿
+@{
+}
+
+@foreach (Dictionary<string, string> job in ViewBag.jobs)
+{
+    <table class="job-listing">
+        <tbody>
+            @foreach (KeyValuePair<string, string> j in job)
+            {
+                <tr>
+                    <td>@j.Key</td>
+                    @if (j.Key == "Name")
+                    {
+                        <td>@j.Value</td>
+                    }
+                    else
+                    {
+                        <td><a class="text-info" href="/List/Jobs/?column=@j.Key&value=@j.Value">@j.Value</a></td>
+                    }
+
+                </tr>
+            }
+        </tbody>
+    </table>
+
+}
